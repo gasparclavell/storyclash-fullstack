@@ -1,0 +1,117 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+HTML FILE
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!DOCTYPE html>
+<!-- English language -->
+<html lang="en-EN">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Storyclash</title>
+
+	<!-- jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
+
+	<!-- My CSS file -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- My JavaScript file -->
+	<script src="./js/js.js"></script>
+</head>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<body>
+
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<!-- Tab -->
+		<div title="Unfold the Report Manager" class="tab center" id="tab_1">
+			<!-- Back circle -->
+			<div class="circle"></div>
+			<!-- Storyclash icon -->
+			<div class="icon"></div>
+		</div>
+	</div>
+
+	<!-- Report management menu -->
+	<div class="report_management">
+
+		<!-- Header -->
+		<div class="rm-header">
+
+			<!-- Report Manager panel fold button -->
+			<div title="Fold the Report Manager" class="fold center">
+				<!-- Back circle -->
+				<div class="circle"></div>
+				<!-- Fold icon -->
+				<i class="fas fa-chevron-up"></i>
+			</div>
+
+			<!-- Bookmark icon container -->
+			<div class="bookmark center">
+				<!-- Bookmark icon -->
+				<i class="far fa-bookmark"></i>
+			</div>
+
+			<!-- Header title -->
+			<div class="rm-title center">
+				<p>Saved Reports</p>
+			</div>
+		</div>
+
+		<!-- General reports container -->
+		<div class="report-container">
+
+			<!-- Header -->
+			<div class="rm-header rc-header">
+
+				<!-- Header title -->
+				<div class="rc-title center">
+					<p>my Reports</p>
+				</div>
+
+				<!-- Report Manager fold button -->
+				<div title="Collapse the list of reports" class="fold_report center">
+					<!-- Back circle -->
+					<div class="circle"></div>
+					<!-- Fold icon -->
+					<i class="fas fa-chevron-up"></i>
+				</div>
+			</div>
+
+			<!-- Report container -->
+			<div class="reports">
+
+				<!-- New reports will be placed here -->
+
+				<!-- Create a new report -->
+				<div class="save_report">
+
+					<!-- Plus icon -->
+					<div class="r-icon center">
+						<i class="fas fa-plus"></i>
+					</div>
+
+					<!-- Text -->
+					<div class="r-name center">
+						<p>Save Report</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Informative message when reports are hidden -->
+			<div class="message-container">
+				<p>Expand to see your reports</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dashboard section -->
+	<div class="content center"></div>
+</body>
+</html>

@@ -1,0 +1,407 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* CSS FILE */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Applied to everything */
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: Helvetica;			
+	box-sizing: border-box;
+	user-select: none;
+}
+
+/* Class for centering divs */
+.center {
+	position: relative;
+  	display: flex;
+  	flex-direction: column;
+  	flex-wrap: wrap;
+  	vertical-align: middle;
+  	align-items: center;
+  	justify-content: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Left sidebar */
+.sidebar {
+	position: absolute;
+	width: 70px;
+	height: 100vh;
+	background-color: rgb(45,45,45);
+	z-index: 100;
+}
+
+/* Report Manager tab*/
+.tab {
+	width: 100%;
+	height: 70px;
+	background-color: rgb(24,183,127);			
+	cursor: pointer;
+	transition: .1s;		
+}		
+
+/* General icon class */
+.icon {
+	position: relative;
+	width: 90%;
+	height: 90%;
+	background-size: 75%;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: .1s;
+}
+/* Storyclash icon */
+#tab_1 .icon {
+	background-image: url("../assets/images/logo.png");
+}
+.tab:hover .icon {
+	transform: scale(1.2);
+}
+.tab:active .icon {
+	transform: scale(0.95);
+}
+
+/* Back logo circle */
+.circle {
+	position: absolute;
+	width: 0%;
+	height: 0%;
+	background-color: rgba(255,255,255,0.15);
+	border-radius: 100px;
+	transition: .1s;
+}
+.tab:hover .circle {
+	width: 75%;
+	height: 75%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Dashboard section */
+.content {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(245,245,245);
+	margin-left: 70px;
+	padding-right: 70px;
+	padding-top: 70px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Report Manager main container */
+.report_management {
+	position: absolute;
+	width: 300px;
+	height: 100vh;
+	background-color: white;
+	z-index: 90;
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+	transform: translateX(-230px);
+	transition: .25s;
+}
+
+/* Header of the Report Manager container*/
+.rm-header {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	margin-left: 0px;
+	display: flex;
+	align-items: center;
+}
+
+/* Subcontainers of the header */
+.fold, .bookmark, .rm-title {
+	width: 60px;
+	height: 70px;
+}
+/* Container of Report Manager fold button */
+.fold {
+	width: 29px;
+	height: 29px;
+	margin-right: 15px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+/* Container of bookmark icon */
+.bookmark {
+	width: 30px;
+	font-size: 26px;
+}
+/* Bookmark icon */
+.bookmark i {
+	opacity: 0.3;
+}
+/* Fold icon */
+.fold i {
+	transform: rotate(-90deg);
+	font-size: 14px;
+	opacity: 0.3;
+}
+/* Back circle of fold buttons */
+.fold .circle, .fold_report .circle {
+	width: 0px;
+	height: 0px;
+	background-color: rgba(0,0,0,0.03);
+	transition: .05s;
+}
+.fold .circle {
+	transform: translateX(1px);
+}
+.fold:hover .circle, .fold_report:hover .circle {
+	width: 26px;
+	height: 26px;
+}
+.fold:hover i {
+	opacity: 0.5;
+}
+.fold:active i {
+	transform: rotate(-90deg) scale(.8);
+}
+.fold:active .circle, .fold_report:active .circle {
+	width: 22px;
+	height: 22px;
+}
+
+/* Header title */
+.rm-title {
+	width: 170px;
+	align-content: flex-start;
+	margin-left: 10px;
+}
+
+/* Header texts */
+.rm-header p {
+	opacity: 0.8;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* General reports container */
+.report-container {
+	width: 100%;
+	height: 100%;
+}
+/* Its header */
+.rc-header {
+	margin-left: 20px;
+	margin-bottom: -10px;
+}	
+
+/* Header text "my Reports" */
+.rc-title {
+	height: 70px;
+	align-content: flex-start;
+}
+
+/* "my Reports" fold button container */
+.fold_report {
+	width: 29px;
+	height: 29px;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;	
+}
+.fold_report i {
+	font-size: 14px;
+	transform: rotate(180deg);
+	transition: .2s;
+	opacity:  .6;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Reports container */
+.reports {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 130px);
+	overflow-y: auto;
+}
+/* Informative message when reports are hidden */
+.message-container p {
+	margin-left: 20px;
+	margin-top: 10px;
+	opacity: .2;
+}
+
+/* Reports */
+.report, .save_report {
+	width: 100%;
+	height: 55px;
+	background-color: white;
+	display: flex;
+	padding-left: 25px;
+	align-items: center;
+}
+.report:hover, .save_report:hover {
+	background-color: rgb(249,249,249);
+}
+.report:hover .r-menu {
+	opacity: 1;
+}
+
+/* Report icon container */
+.r-icon {
+	width: 35px;
+	height: 35px;
+	background-color: rgb(24,183,127);
+	border-radius: 100px;
+	transition: .05s;
+}
+
+/* Report icon */
+.trophy {
+	width: 100%;
+    height: 100%;
+    background-size: 60%;
+    background-position: 50% 55%;
+	background-repeat: no-repeat;
+	background-image: url("../assets/images/trophy.png");
+	transition: .05s;
+}
+
+/* Report name */
+.r-name {
+	width: 182px;
+	height: 100%;
+	align-items: flex-start;
+	opacity: 0.8;
+	margin-left: 14px;
+}
+.r-name p {
+	height: 20px;
+	width: 176px;
+	transform: translate(0px, 1px);
+}
+
+/* Report menu button */
+.r-menu {
+	width: 33px;
+	height: 33px;
+	opacity: 0;
+	cursor: pointer;
+}
+.r-menu .circle {
+	width: 0;
+	height: 0;
+	background-color: rgba(0,0,0,0.05);
+	opacity: 1;
+	transition: .05s;
+}
+.r-menu:hover .circle {
+	width: 31px;
+	height: 31px;
+}
+.r-menu i {
+	font-size: 20px;
+	opacity: .5;
+	transition: .0s;
+}
+.r-menu:active .circle {
+	width: 29px;
+	height: 29px;
+}
+.r-menu:active i {
+	font-size: 18px;
+}
+
+/* Report textfield */
+.name_field {
+	position: absolute;
+	height: 29px;
+	width: 180px;
+	margin-left: 40px;
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 250;
+	font-size: 16px;
+	padding-top: 2px;
+	margin-top: -2px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */	
+
+/* Reports settings panel */
+.r-menu_panel {
+	position: absolute;
+    width: 170px;
+    transform: translate(90px, 63px);
+    background-color: white;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    z-index: 200;
+    opacity: 0;
+    transition: .0s;
+    pointer-events: none;
+}
+
+/* Report setting */
+.menu-option {
+	width: 100%;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	color: rgba(0,0,0,.6);
+	cursor: pointer;
+}
+.menu-option:hover {
+	background-color: rgb(250,250,250);
+}
+.menu-option i {
+	margin-left: 17px;
+}
+.menu-option p {
+	margin-left: 17px;
+}	
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.save_report {
+	cursor: pointer;
+}
+.save_report .r-name {
+	color: rgb(24,183,127);
+}
+.save_report .r-icon {
+	border: 3px solid rgb(24,183,127);
+	background-color: transparent;
+	color: rgb(24,183,127);
+	transform: scale(.7) translate(3px, -1px);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Default style of the first two reports */
+
+#report_1 .trophy, #report_2 .trophy {			
+    background-position: center;
+	background-repeat: no-repeat;
+}
+
+#report_1 .trophy {
+	background-size: 65%;
+	background-image: url("../assets/images/mercedes_logo.jpg");
+}
+#report_2 .trophy {
+	background-size: 70%;
+	background-image: url("../assets/images/eye.png");
+}
+
+#report_1 .r-icon {
+	background-color: black;
+}
+#report_2 .r-icon {
+	background-color: rgb(182,166,10);
+}
